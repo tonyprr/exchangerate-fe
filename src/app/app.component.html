@@ -1,0 +1,29 @@
+<form>
+  <p>Conversión de Moneda</p>
+  <label>Monto: </label> <input type="text" placeholder="Monto" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}"/><br/>
+  <label>Moneda de Origen: </label> <input type="text" placeholder="Moneda de Origen" [(ngModel)]="chargeCurrency" [ngModelOptions]="{standalone: true}"/><br/>
+  <label>Moneda de Destino: </label> <input type="text" placeholder="Moneda de Destino" [(ngModel)]="depositCurrency" [ngModelOptions]="{standalone: true}"/><br/>
+
+  <button  type="button" (click)="getConversion()">convertir</button>
+</form>
+
+<table class="table-exchange">
+  <thead>
+    <tr>
+      <th>Monto</th>
+      <th>Moneda de Origen</th>
+      <th>Moneda de Destino</th>
+      <th>Tipo de Cambio</th>
+      <th>Monto al Cambio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{conversion.amount}}</td>
+      <td>{{conversion.chargeCurrency}}</td>
+      <td>{{conversion.depositCurrency}}</td>
+      <td>{{conversion.exchangeRate}}</td>
+      <td>{{conversion.changeAmount}}</td>
+    </tr>
+  </tbody>
+</table>
